@@ -1,0 +1,257 @@
+.header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  height: auto;
+  width: 100%;
+  margin-top: 40vh;
+  margin-bottom: 60vh;
+  background-color: #{nth($colors, 1)};
+  z-index: 200;
+
+  &-content {
+    max-width: 1500px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-logo {
+    width: 9rem;
+    height: 5rem;
+
+    @include mq(tab) {
+      width: 10rem;
+      height: 6rem;
+    }
+    @include mq(pc) {
+      margin-left: 3rem;
+    }
+  }
+
+  //pc表示　メニュー
+  &_pc {
+    display: none;
+
+    @include mq(tab) {
+      display: block;
+    }
+
+    &-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding-right: 30px;
+    }
+    &-item:not(:last-child) {
+      margin-right: 30px;
+    }
+    &-item {
+      position: relative;
+      padding: 2.5rem 0;
+      pointer-events: none;
+      font-weight: bold;
+
+      &:hover {
+        color: #{nth($colors, 4)};
+      }
+      &:hover:before {
+        opacity: 1;
+      }
+
+      &::before {
+        position: absolute;
+        content: "";
+        display: block;
+        width: 5rem;
+        height: 5rem;
+        @include radial-gradient(
+          #{nth($colors, 1)},
+          30%,
+          #{nth($colors, 4)},
+          90%
+        );
+        border: solid 1px #{nth($colors, 1)};
+        border-radius: 50%;
+        z-index: -1;
+        top: 10%;
+        left: 0;
+        opacity: 0;
+        transition: 1s;
+        pointer-events: none;
+      }
+
+      a {
+        @include link-cove();
+      }
+    }
+  }
+
+  //sp表示　
+  &_sp {
+    display: block;
+
+    @include mq(tab) {
+      display: none;
+    }
+    &-check {
+      display: none;
+    }
+    &-label {
+      height: 2rem;
+      width: 2rem;
+      display: block;
+      margin-right: 1rem;
+    }
+
+    &-icon {
+      background-color: #{nth($colors, 5)};
+      border-radius: 4px;
+      display: block;
+      transition: all 0.3s ease-in-out;
+      width: 100%;
+      height: 5px;
+      position: relative;
+      left: 0;
+      top: 33%;
+
+      &:before {
+        background-color: #{nth($colors, 5)};
+        border-radius: 4px;
+        display: block;
+        transition: all 0.3s ease-in-out;
+        content: "";
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 200%;
+        transform: translateY(0px) rotate(0deg);
+        -webkit-transform: translateY(0px) rotate(0deg);
+      }
+      &:after {
+        background-color: #{nth($colors, 5)};
+        border-radius: 4px;
+        display: block;
+        transition: all 0.3s ease-in-out;
+        content: "";
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        bottom: 200%;
+        transform: translateY(0px) rotate(0deg);
+        -webkit-transform: translateY(0px) rotate(0deg);
+      }
+    }
+
+    &-label-bg {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      display: none;
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+
+    &-nav {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: all 1s;
+    }
+
+    &-item {
+      padding: 0 1rem;
+      background-color: #{nth($colors, 1)};
+      border-bottom: #{nth($colors, 4)} solid 1px;
+      margin: 0 !important;
+      position: relative;
+      transition: height 1s, padding 1s, color 0.5s,background-color 1s;
+      pointer-events: none;
+      height: 0;
+      color: rgba(81, 78, 64, 0);
+
+      &:hover {
+        background-color: #{nth($colors, 4)};
+        color: #{nth($colors, 1)}!important;
+      }
+
+      &::before {
+        display: none;
+      }
+
+      a {
+        @include link-cove();
+      }
+    }
+    &-label2 {
+      background-color: transparent;
+      height: 2rem;
+      display: block;
+      width: 2rem;
+      margin-left: 90%;
+    }
+    &-icon2 {
+      background-color: #{nth($colors, 5)};
+      border-radius: 4px;
+      display: block;
+      transition: all 0.3s ease-in-out;
+      width: 100%;
+      height: 5px;
+      position: relative;
+      left: 0;
+      top: 33%;
+      transform: translateY(0.5rem) rotate(45deg);
+      -webkit-transform: translateY(0.5rem) rotate(45deg);
+
+      &:before {
+        background-color: #{nth($colors, 5)};
+        border-radius: 4px;
+        display: block;
+        transition: all 0.3s ease-in-out;
+        content: "";
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 200%;
+        transform: translateY(-0.6rem) rotate(-90deg);
+        -webkit-transform: translateY(-0.6rem) rotate(-90deg);
+      }
+    }
+  }
+}
+
+#header_sp-check:checked ~ .header_sp-nav {
+  opacity: 1;
+}
+#header_sp-check:checked ~ .header_sp-nav .header_sp-item {
+  height: auto;
+  padding: 1rem;
+  color: rgba(81, 78, 64, 1);
+}
+#header_sp-check:checked ~ .header_sp-label-bg {
+  display: block;
+}
+#header_sp-check:checked ~ .header_sp-label .header_sp-icon {
+  height: 0;
+}
+#header_sp-check:checked ~ .header_sp-label .header_sp-icon::before,
+.header_sp-label .header_sp-icon::after {
+  height: 5px;
+}
+
+#header_sp-check:checked ~ .header_sp-label .header_sp-icon::before {
+  transform: translateY(-0.15rem) rotate(45deg);
+  -webkit-transform: translateY(-0.15rem) rotate(45deg);
+}
+#header_sp-check:checked ~ .header_sp-label .header_sp-icon::after {
+  transform: translateY(0.15rem) rotate(-45deg);
+  -webkit-transform: translateY(0.15rem) rotate(-45deg);
+}

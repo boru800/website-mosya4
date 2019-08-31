@@ -1,0 +1,23 @@
+body{
+  color: #{nth($colors, 5)};
+  font-family: 'Avenir','Helvetica Neue','Helvetica','Arial',YuGothic,'Yu Gothic','Hiragino Sans','ヒラギノ角ゴシック','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic',sans-serif;
+  background-color: #{nth($colors, 2)};
+  
+}
+
+li{
+  list-style: none;
+}
+//SP
+@media screen and (max-width: #{nth($breakPointList, 1)}){
+  body{
+    min-width: 320px;
+  }
+
+}
+//PC
+@media print,screen and (min-width: #{nth($breakPointList, 2)}){
+  body{
+    width: 100%;
+  }
+}

@@ -1,0 +1,92 @@
+
+
+.portfolio {
+    height: auto;
+    z-index: 0;
+    background-color: transparent;
+    padding-bottom: 5rem;
+  
+    &_heading {
+      @include round-heading();
+      @include mq(tab) {
+        top: 2.5rem;
+      }
+    }
+  }
+  .swiper-wrapper {
+    padding-bottom: 7rem;
+    @include mq(tab) {
+      margin-left: 30%;
+    }
+  
+    .swiper-slide {
+      padding-bottom: 1rem;
+      background-color: rgba(255, 255, 255, 0.7);
+      max-width: 800px;
+  
+      &__img {
+        height: 280px;
+        width: 100%;
+        margin-bottom: 1rem;
+  
+        &_scroll {
+          overflow-y: scroll;
+          overflow-x: hidden;
+          width: 100%;
+          height: 100%;
+          padding-right: 17px; /* Increase/decrease this value for cross-browser compatibility */
+          box-sizing: content-box; /* So the width will be 100% + 17px */
+  
+          img {
+            width: 100%;
+            margin-left: 9px;
+          }
+        }
+      }
+  
+      &_heading {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+        padding-left: 5%;
+      }
+  
+      &_text {
+        padding-left: 5%;
+        margin-bottom: 1.5rem;
+      }
+  
+      &_link {
+        display: inline-block;
+        padding: 1rem 2rem;
+        background-color: #{nth($colors, 5)};
+        border-radius: 2rem;
+        margin-left: 5%;
+        position: relative;
+        color: #{nth($colors, 1)};
+        font-weight: bold;
+        pointer-events: none;
+        transition: all 0.5s;
+  
+        &:hover {
+          background-color: #{nth($colors, 4)};
+        }
+  
+        &:active {
+          background-color: #{nth($colors, 1)};
+          color: #{nth($colors, 4)};
+        }
+  
+        a {
+          @include link-cove();
+        }
+      }
+    }
+  }
+  .swiper-pagination-bullet {
+    padding: 0.8rem;
+  }
+  
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none;
+  }

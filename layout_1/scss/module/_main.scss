@@ -1,0 +1,17 @@
+.main{
+    width: 1000px;
+    margin: 0 auto;
+    display: flex;
+
+    .box1{
+        width: 700px;
+        height: 600px;
+        background-color: #e8c4c6;
+    }
+
+    .box2{
+        width: 300px;
+        height: 600px;
+        background-color: #b5d3e8;
+    }
+}

@@ -1,0 +1,33 @@
+.footer {
+  height: 280px;
+  background-color: #{nth($colors, 5)};
+  z-index: 0;
+  color: #{nth($colors, 1)};
+  padding-top: 3rem;
+
+  &-content {
+    width: 90%;
+    max-width: 1500px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: baseline;
+  }
+
+  .fa-size-t {
+    font-size: 3rem;
+    color: #{nth($colors, 1)};
+    transition: all 1s;
+    &:hover {
+      color: #{nth($colors, 4)};
+    }
+  }
+
+  &-copyright {
+    padding-top: 3rem;
+    margin-top: 2rem;
+    width: 100%;
+    text-align: center;
+  }
+}

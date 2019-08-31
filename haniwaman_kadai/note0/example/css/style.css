@@ -1,0 +1,214 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	background: #fff;
+	color: #3c3c3c;
+	font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
+	font-size: 16px;
+	line-height: 1.6;
+}
+
+img {
+	border: 0;
+	height: auto;
+	max-width: 100%;
+	vertical-align: top;
+}
+
+.inner {
+	margin: 0 auto;
+	max-width: 100%;
+	width: 1180px;
+}
+
+#header {
+	background: #2a7eb1;
+}
+
+#header .inner::after {
+	clear: both;
+	content: "";
+	display: block;
+}
+
+.header-logo {
+	float: left;
+	margin: 16px 0;
+}
+
+.header-logo > a {
+	transition: all 0.3s ease 0s;
+}
+
+.header-logo > a:hover {
+	opacity: 0.6;
+}
+
+.header-logo > a img {
+	vertical-align: middle;
+	width: 200px;
+}
+
+.hnav-list {
+	float: right;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.hnav-item {
+	float: left;
+	margin: 24px 32px 20px 0;
+}
+
+.hnav-item:last-child {
+	margin-right: 0;
+}
+
+.hnav-item > a {
+	color: #fff;
+	text-decoration: none;
+	transition: all 0.3s ease 0s;
+}
+
+.hnav-item > a:hover {
+	opacity: 0.6;
+}
+
+#mainvisual {
+	background: transparent url(../img/mv.jpg) top center/cover;
+	padding-top: 19.76%;
+}
+
+#blog .inner {
+	padding: 44px 0 110px;
+}
+
+#blog h2 {
+	color: #3c3c3c;
+	font-size: 36px;
+	font-weight: 700;
+	line-height: 1.2;
+	margin: 0 0 44px;
+	padding: 0 18px 0 26px;
+	position: relative;
+}
+
+#blog h2::after {
+	-webkit-transform: translateY(-50%);
+	background: #2a7eb1;
+	content: "";
+	height: 26px;
+	left: 0;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 6px;
+}
+
+.items::after {
+	clear: both;
+	content: "";
+	display: block;
+}
+
+.item {
+	border-radius: 8px;
+	box-shadow: 0 0 5px rgba(17, 51, 72, 0.2);
+	color: #3c3c3c;
+	float: left;
+	margin: 0 50px 50px 0;
+	padding: 20px 20px 22px 20px;
+	text-decoration: none;
+	transition: all 0.3s ease 0s;
+	width: 360px;
+}
+
+.item:nth-child(3n) {
+	margin-right: 0;
+}
+
+.item:hover {
+	opacity: 0.6;
+}
+
+.item-img {
+	margin-bottom: 22px;
+	text-align: center;
+}
+
+.item-body p {
+	line-height: 1.5;
+	margin: 0;
+}
+
+#footer {
+	background: #b3b3b3;
+}
+
+.copy {
+	font-size: 12px;
+	margin: 0;
+	padding: 24px 8px 22px;
+	text-align: center;
+}
+
+@media screen and (max-width: 1179px) {
+
+	.inner,
+	#blog .inner {
+		padding-left: 24px;
+		padding-right: 24px;
+	}
+
+	.hnav {
+		display: none;
+	}
+
+	.item {
+		margin-bottom: 30px;
+		margin-right: 30px;
+		width: calc(33.33333333% - 20px);
+	}
+
+	}
+
+@media screen and (max-width: 767px) {
+
+	.inner,
+	#blog .inner {
+		padding-left: 12px;
+		padding-right: 12px;
+	}
+
+	#blog .inner {
+		padding-bottom: 32px;
+		padding-top: 32px;
+	}
+
+	#blog h2 {
+		font-size: 24px;
+		margin-bottom: 32px;
+		padding-left: 12px;
+		padding-right: 12px;
+	}
+
+	.item {
+		margin-right: 0;
+		width: 100%;
+	}
+
+}
+

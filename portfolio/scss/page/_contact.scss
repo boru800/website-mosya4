@@ -1,0 +1,91 @@
+
+
+.contact {
+    padding-bottom: 5rem;
+    height: auto;
+    z-index: 0;
+    background-color: transparent;
+  
+    &_heading {
+      @include round-heading();
+      @include mq(tab) {
+        top: 2.5rem;
+      }
+    }
+  
+    &-content {
+      margin-top: 2rem;
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.8);
+      max-width: 95%;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+      padding-top: 3rem;
+      @include mq(tab) {
+        padding: 3rem;
+      }
+      @include mq(pc) {
+        max-width: 80%;
+      }
+  
+      &_heading {
+        font-size: 1.2rem;
+        margin-bottom: 2.5rem;
+      }
+    }
+  
+    &-mail {
+      display: block;
+      width: 100%;
+      text-align: left;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+  
+      &_input {
+        width: 100%;
+        padding: 0.6rem 0;
+        margin-bottom: 1.5rem;
+      }
+    }
+    &-msg {
+      display: block;
+      width: 100%;
+      text-align: left;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+  
+      &_input {
+        width: 100%;
+        padding: 0.6rem 0;
+        height: 10rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+  
+    &-btn {
+      display: block;
+      width: 30%;
+      margin: 0 auto;
+      border-radius: 2rem;
+      height: 3rem;
+      inline-size: none;
+      border: none;
+      background-color: #{nth($colors, 5)};
+      color: #{nth($colors, 1)};
+      font-weight: bold;
+      font-size: 1.2rem;
+      letter-spacing: 0.2rem;
+      max-width: 300px;
+      transition: 1s all;
+  
+      &:hover {
+        background-color: #{nth($colors, 4)};
+      }
+  
+      &:active {
+        background-color: #{nth($colors, 1)};
+        color: #{nth($colors, 4)};
+      }
+    }
+  }
+  

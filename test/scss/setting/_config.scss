@@ -1,0 +1,27 @@
+//ブレイクポイント
+$breakPointList: 481px, 769px;
+
+//メディアクエリ
+$mq: (
+  'tab': 'screen and (min-width: #{nth($breakPointList, 1)})',
+  'pc': 'print,screen and (min-width: #{nth($breakPointList, 2)})'
+) !default;
+
+@mixin mq($breakpoint: tab) {
+  @media #{map-get($mq, $breakpoint)} {
+    @content;
+  }
+}
+//画像格納ディレクトリ
+$imgDir: '/img/';
+
+//PCレイアウト時の最小横幅
+$minPcContentWidth: 1000px;
+
+//サイトで使用するカラー
+
+//使用方法 n番目を指定
+//#{nth($colors, 1)他
+$colors:#FFF, #e4f9f5, #30e3ca,#11999e,#40514e,#3E3E3E;
+
+
