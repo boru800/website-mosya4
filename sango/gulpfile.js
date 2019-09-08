@@ -82,11 +82,16 @@ var sass = require('gulp-sass');
 var postcss      = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
 
+
 gulp.task('sass', function() {
   return gulp.src('./scss/**/*.scss')
     .pipe(sass({outputStyle: 'expanded'}))
-    .pipe(postcss([autoprefixer()]))
+    .pipe(postcss([
+      autoprefixer({
+        grid: true
+      })
+    ]))
+
     .pipe(gulp.dest('./css'));
 });
-
 
