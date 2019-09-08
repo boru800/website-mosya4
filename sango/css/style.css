@@ -557,17 +557,15 @@ li {
   position: relative;
   transition: all 0.5s;
   pointer-events: none;
-  border: none;
   width: 16rem;
   height: 4.7rem;
-  cursor: pointer;
   font-size: 2.1rem;
-  line-height: 1.83333;
+  line-height: 4.7rem;
   border-radius: 4px;
   color: #FFFFFF;
   background-color: #6CB8FF;
   box-shadow: 0 2px 2px #4E4E4E;
-  padding-left: 2rem;
+  padding-left: 3.5rem;
 }
 
 @media screen and (max-width: 767px) {

@@ -84,17 +84,15 @@
         position: relative;
         transition: all 0.5s;
         pointer-events: none;
-        border: none;
         width: 16rem;
         height: 4.7rem;
-        cursor: pointer;
         font-size: 2.1rem;
-        line-height: (33/18);
+        line-height: 4.7rem;
         border-radius: 4px;
         color: #{nth($colors, 1)};
         background-color: #{nth($colors, 5)};
         box-shadow: 0 2px 2px #{nth($colors, 10)};
-        padding-left: 2rem;
+        padding-left: 3.5rem;
 
         @include mq ('sp'){
             left:50%;
