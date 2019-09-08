@@ -4,8 +4,9 @@ html{
 }
 
 body{
-  color: #{nth($colors, 4)};
-  font-family: 'Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',YuGothic,'Yu Gothic',sans-serif;
+  color: #{nth($colors, 3)};
+  font-family: Helvetica, Arial, "BIZ UDGothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", YuGothic, "Yu Gothic", メイリオ, Meiryo, sans-serif;
+  font-weight: 700;
   background-color: #{nth($colors, 1)};
   font-size: 1.6rem;
 }
@@ -25,14 +26,7 @@ li{
 
 //tab
 @media screen and (max-width: 1099px){
-  body{
-    min-width: 320px;
-  }
-  html, body{
-    height: 100%;
-    min-height: 100%;
-    font-size: 55%;
-  }
+
 }
 
 //SP
@@ -43,6 +37,5 @@ li{
   html, body{
     height: 100%;
     min-height: 100%;
-    font-size: 55%;
   }
 }

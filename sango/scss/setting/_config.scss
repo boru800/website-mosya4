@@ -21,11 +21,11 @@ $mq: (
   
 }
 .inner{
-  max-width: 1000px;
+  max-width: 1180px;
   margin: 0 auto;
 
   @include mq ("tab"){
-    max-width: 90%;
+    max-width: 95%;
   }
 }
 
@@ -45,5 +45,4 @@ $minPcContentWidth: 1000px;
 
 //使用方法 n番目を指定
 //#{nth($colors, 1)他
-$colors: #FFFFFF,#000000, #e5db70,#5c6614,#f6d300,#f4f6ea,#1c1f03,#4c4f35,#e64545,#dfe3c5;
-
+$colors: #FFFFFF,#000000,#252525, #EAEDF2,#6CB8FF,#CACDD1,#B7B9FE,#6BB7FF,#EAEAEA,#4E4E4E,#93D1F0,#A7A7A7,#F9B36B,#b5b5b5,#555555,#C8E4FF,#5CA8F7,#626262,#b7b7b7,#919191,#E0E4EB,#58A9EF;

@@ -1,51 +1,46 @@
 .header{
     width: 100%;
     position: relative;
+    background-color: #{nth($colors, 5)};
+    color: #{nth($colors, 1)};
+    box-shadow: 0 0 5px #000;
+    
 
     .inner{
+        height: 6rem;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        align-items: center;
     }
 
-    &-top{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        height: 130px;
-        align-items: center;
-        width: 100%;
+    &-logo {
 
         @include mq ('sp'){
-            padding-top: 3rem;
-            padding-bottom: 1rem;
-            height: 100%;
-            width: 50%;
+            width: 100%;
+            text-align: center;
         }
+
+        img{
+            width:16rem;
+            height: 5rem;
+
+            @include mq ('sp'){
+                width: 13.5rem;
+                height: 3.5rem;
+            }
+        }
+
+
     }
 
+
     &-nav{
-        width: 100%;
         @include mq ('sp'){
             display: none;
         }
     }
-
-
-    &-line{
-        &_top{
-            border: solid 1px #{nth($colors, 3)};
-            width: 100%;
-            position: absolute;
-            top:12.8rem;
-        }
-
-        &_bottom{
-            border: solid 1px #{nth($colors, 3)};
-            margin-bottom: 2px;
-        }
         
-    }
     &-list{
         display: flex;
         flex-wrap: wrap;
@@ -55,31 +50,40 @@
     }
 
     &-item{
+
+        i{
+            margin-right: .5rem;
+        }
+        font-size: 1.5rem;
         position: relative;
         transition: all 0.5s;
         pointer-events: none;
-        padding: 1.1rem .2rem 1.1rem .2rem;
-        border-bottom: solid 1rem #{nth($colors, 1)};
-        border-top: solid 1rem #{nth($colors, 1)};
+        padding: 2.2rem 1rem 2.2rem 1rem;
 
-            &:hover{
-                border-bottom: solid 1rem #{nth($colors, 3)};
-                border-top: solid 1rem #{nth($colors, 3)};
-            }
-
+        
             a{
                 @include link-cover();
+
+                &:after{
+                    transition: all .5s;
+                    position: absolute;
+                    content: "";
+                    border-bottom: solid .4rem #{nth($colors, 1)};
+                    display: block;
+                    width: 0%;
+                    bottom:0;
+                
+                }
+
+                &:hover::after{
+                    border-bottom: solid .4rem #{nth($colors, 1)};
+                    width: 100%;
+                }
             }
 
     }
 
 
-    &-logo{
-        @include mq ('sp'){
-            width: 100%;
-            margin-bottom: 1rem;
-        }
-    }
 
     &-tel{
         @include mq ('sp'){
@@ -90,48 +94,23 @@
 
     &_sp{
         display: none;
-        margin-top: 2.5rem;
 
         @include mq ('sp'){
             display: block;
+            position: absolute;
+            right:1rem;
         }
     
         &-check{
             display: none;
         }
 
-        &-label {
-            display: block;
-            width: 30px;
-            height: 30px;
-            margin-top: 30px;
+        &-icon{
+            font-size: 2rem;
         }
         
-        &-icon {
-            @include h-icon;
-            position: relative;
-            top: 0;
-            margin-top: 12.5px;
-            transition: all .5s;
-        
-            &:before{                
-                @include h-icon;
-                content: "";
-                position: absolute;
-                top: -10.5px;
-                transition: all 0.5s;
-            }
-            &:after{
-                @include h-icon;
-                content: "";
-                position: absolute;
-                top: 10.5px;
-                transition: all 0.5s;
-            }
 
-            
-            
-        }
+        
         &-label-bg {
             position: fixed;
             width: 100%;
@@ -143,20 +122,7 @@
             display: none;
             opacity: 0.3;
         }
-        
-        &-nav {
-            padding-top: 30px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 60%;
-            background-color: #fff;
-            transition: all 1s;
-            text-align: center;
-            transform: translateX(-100%);
-            z-index: 200;
-        }
+ 
         
         &-item{
             pointer-events: none;
@@ -174,29 +140,92 @@
             a{
                 @include link-cover;
             }
+
+
+        }
+        &-search{
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            display: none;
+            z-index: 200;
+            font-size: 1.5rem;
+            width: 355px;
+
+            &-text{
+                font-size: 1.5rem;
+                font-weight: normal;
+                margin-bottom: .5rem;;
+            }
+            &-container{
+            box-sizing: border-box;
+
+
+
+                input[type="text"]{
+                background: #{nth($colors, 1)};
+                border: none;
+                height: 4.5rem;
+                border-radius: 2px 0 0 2px;
+                width: 86%;
+                font-size: 1.8rem;
+                padding-left: 1rem;
+                }
+
+                input[type="text"]:focus {
+                outline: 0;
+                }
+
+                input[type="submit"]{
+                    cursor: pointer;
+                    width: 14%;
+                    border: none;
+                    background: #{nth($colors, 9)};
+                    color: #{nth($colors, 1)};
+                    outline : none;
+                    height: 4.5rem;
+                    margin-left: -5px;
+                    border-radius: 0 2px 2px 0;
+                
+            }
+
+            }
+
+            &-submit{
+                position: relative;
+
+                &:after{
+                    position: absolute;
+                    font-family: "Font Awesome 5 Free";
+                    font-weight: 900;
+                    content: "\f002"; 
+                    left:0;
+                    color: #{nth($colors, 10)};
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    font-size: 2.5rem;
+                    pointer-events: none;
+                }
+            }
+
+
+
         }
 
-}
+    }
 }
 
-#header_sp-check:checked ~ .header_sp-nav {
-    transform: translateX(0%);
+#header_sp-check:checked ~ .header_sp-search {
+    display: block;
   }
   #header_sp-check:checked ~ .header_sp-label-bg {
     display: block;
     opacity: 0.5;
   }
-  #header_sp-check:checked ~ .header_sp-label .header_sp-icon {
-    height: 0;
-  }
-  #header_sp-check:checked ~ .header_sp-label .header_sp-icon::before {
-    transform: translateY(10.5px) rotate(135deg);
-    -webkit-transform: translateY(10.5px) rotate(135deg);
-  }
-  #header_sp-check:checked ~ .header_sp-label .header_sp-icon::after {
-    transform: translateY(-10.5px) rotate(-135deg);
-    -webkit-transform: translateY(-10.5px) rotate(-135deg);
-  }
+
 
 
 

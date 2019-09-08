@@ -1,0 +1,7 @@
+@mixin follow-label{
+    position: absolute;
+    font-size: 1.3rem;
+    font-weight: normal;
+    bottom:-1.5rem;
+    color: #{nth($colors, 19)};
+}
